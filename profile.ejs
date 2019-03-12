@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<title>Profile Chathub</title>
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    -->        </head>
+    <style>
+        
+        
+        .card {
+            padding-top: 20px;
+            margin: 10px 0 20px 0;
+            background-color: rgba(214, 224, 226, 0.2);
+            border-top-width: 0;
+            border-bottom-width: 2px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .card .card-heading {
+            padding: 0 20px;
+            margin: 0;
+        }
+        
+        .card .card-heading.simple {
+            font-size: 20px;
+            font-weight: 300;
+            color: #777;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .card .card-heading.image img {
+            display: inline-block;
+            width: 46px;
+            height: 46px;
+            margin-right: 15px;
+            vertical-align: top;
+            border: 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        
+        .card .card-heading.image .card-heading-header {
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .card .card-heading.image .card-heading-header h3 {
+            margin: 0;
+            font-size: 14px;
+            line-height: 16px;
+            color: #262626;
+        }
+        
+        .card .card-heading.image .card-heading-header span {
+            font-size: 12px;
+            color: #999999;
+        }
+        
+        .card .card-body {
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+        
+        .card .card-media {
+            padding: 0 20px;
+            margin: 0 -14px;
+        }
+        
+        .card .card-media img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .card .card-actions {
+            min-height: 30px;
+            padding: 0 20px 20px 20px;
+            margin: 20px 0 0 0;
+        }
+        
+        .card .card-comments {
+            padding: 20px;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        
+        .card .card-comments .comments-collapse-toggle {
+            padding: 0;
+            margin: 0 20px 12px 20px;
+        }
+        
+        .card .card-comments .comments-collapse-toggle a,
+        .card .card-comments .comments-collapse-toggle span {
+            padding-right: 5px;
+            overflow: hidden;
+            font-size: 12px;
+            color: #999;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .card-comments .media-heading {
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .card.people {
+            position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 300px;
+            padding-top: 0;
+            margin-left: 20px;
+            overflow: hidden;
+            vertical-align: top;
+        }
+        
+        .card.people:first-child {
+            margin-left: 0;
+        }
+        
+        .card.people .card-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 170px;
+            height: 150px;
+            background-color: #ffffff;
+        }
+        
+        .card.people .card-top.green {
+            background-color: #53a93f;
+        }
+        
+        .card.people .card-top.blue {
+            background-color: #427fed;
+        }
+        
+        .card.people .card-info {
+            position: absolute;
+            top: 150px;
+            display: inline-block;
+            width: 100%;
+            height: 101px;
+            overflow: hidden;
+            background: #ffffff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .card.people .card-info .title {
+            display: block;
+            margin: 8px 14px 0 14px;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            color: #404040;
+        }
+        
+        .card.people .card-info .desc {
+            display: block;
+            margin: 8px 14px 0 14px;
+            overflow: hidden;
+            font-size: 12px;
+            line-height: 16px;
+            color: #e645b5;
+            text-overflow: ellipsis;
+            font-size: 16;
+        }
+        
+        .card.people .card-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 20px;
+            line-height: 29px;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .card.hovercard {
+            position: relative;
+            padding-top: 0;
+            overflow: hidden;
+            text-align: center;
+            background-color: rgba(214, 224, 226, 0.2);
+        }
+        
+        .card.hovercard .cardheader {
+            background: url("http://lorempixel.com/850/280/nature/4/");
+            background-size: cover;
+            height: 135px;
+        }
+        
+        .card.hovercard .avatar {
+            position: relative;
+            top: -50px;
+            margin-bottom: -50px;
+            margin-left: -1000px;
+        }
+        
+        .card.hovercard .avatar img {
+            width: 100px;
+            height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.5);
+        }
+        
+        .card.hovercard .info {
+            padding: 4px 8px 10px;
+        }
+        
+        .card.hovercard .info .title {
+            margin-bottom: 4px;
+            font-size: 24px;
+            line-height: 1;
+            color: #262626;
+            vertical-align: middle;
+        }
+        
+        .card.hovercard .info .desc {
+            overflow: hidden;
+            font-size: 12px;
+            line-height: 20px;
+            color: #737373;
+            text-overflow: ellipsis;
+        }
+        
+        .card.hovercard .bottom {
+            padding: 0 20px;
+            margin-bottom: 17px;
+        }
+        
+        .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+        .para{
+            font-family:'Arial Narrow';
+            font-size: 17px;
+        }
+    </style>
+    <body>
+        
+        
+        <div class="container" style="width:100%;">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" style="width : 100%">
+                    
+                    <div class="card hovercard">
+                        <div class="cardheader">
+                            
+                        </div>
+                        <div class="avatar">
+                            <img alt="" src="data:image/jpeg;base64,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">
+                        </div>
+                        <div class="info" style="margin-left: -1000px;">
+                            <div class="title">
+                                <% if (currentUser) { %>
+                                    <a target="_blank" href="https://scripteden.com/"><%= currentUser.name %></a>
+                                    <div class="para">
+                                        <p ><%= currentUser.email %></p>
+                                        <p ><%= currentUser.bday %></p>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                                <% } %>
+                            </div>
+                            <div class="bottom" style="margin-left: -1000px;">
+                                <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" rel="publisher"
+                                href="https://plus.google.com/+ahmshahnuralam">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" rel="publisher"
+                            href="https://plus.google.com/shahnuralam">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                        
+                    </div>
+                    <div class="bottom">
+                        <a href="/user/logout" class="btn btn-info" style="width: 100px; margin-top: -300px;
+                        
+                        margin-left: 1000px;">LogOut</a>
+                        
+                    </div>
+                    <div class=" form-group shadow-textarea">
+                        <form action="/user/post/new" method="POST">
+                            <textarea class="form-control z-depth-1" rows="0" cols="0" name="newpost" placeholder="What's happening ?"></textarea>
+                            
+                            <input class="btn btn-success" type="submit" value="Create New Post" style="width: 150px; margin-left: 1000px; margin-top: 015px"/>
+                        </form>
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
